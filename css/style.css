@@ -1,0 +1,80 @@
+body{
+    margin: 0;
+    font-family: 'poppins',sans-serif;
+    background-color: #f2f2f2;
+}
+.container{
+    width: 600px;
+    margin: 50px auto 0;    
+    text-transform: capitalize;
+}
+.add-contact{
+    width: 150px;
+    padding: 5px;
+    margin: 0 0 20px;
+    border-radius: 5px;
+    display: block;
+    text-decoration: none;
+    background-color: #77f;
+    color: #fff;
+    text-align: center;
+    transition: .1s;
+}
+.add-contact:hover{
+    box-shadow: 2px 2px 5px rgba(0,0,0,.3);
+    background-color: #99f;
+}
+.card{
+    position: relative;
+    width: 250px;
+    height: 70px;
+    border-radius: 70px;
+    background-color: #dadafa;
+    float: left;
+    transition: .1s;
+    margin: 0 20px 20px 0;
+}
+.card:hover{box-shadow: 2px 2px 5px rgba(0,0,0,.2);}
+.photo,
+.name,
+.phone,
+.close{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.photo{
+    left: 5px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-weight: 500;
+    font-size: 1.5em;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #7f7;
+    text-align: center;
+}
+.card:nth-child(2n) .photo{background-color: #f77;}
+.card:nth-child(3n) .photo{background-color: #77f;}
+.name{
+    font-weight: 500;
+    left: 90px;
+    transform: translateY(-75%);
+}
+.phone{
+    left: 90px;
+    transform: translateY(0);
+    font-size : .8em;
+}
+.close{
+    right: 20px;
+    font-size: 1.3em;
+    font-weight: 500;
+    color: #f99;
+    pointer-events: visible;
+    cursor: pointer;
+}
+.close:hover{color: #f00;}
+.close:active{cursor: default;}
