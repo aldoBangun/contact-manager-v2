@@ -20,11 +20,9 @@ container.addEventListener('click',function(e){
         const name = prompt('Contact Name : ');
         const pattern = /^0+[0-9]{11}$/;
         const phone = prompt('Contact Number : ');
-        if(phone.match(pattern)){
-            e.target.parentNode.appendChild(addCard(name,phone));
-        } else {
-            alert('please enter a valid number');
-        }
+        phone.match(pattern) ? 
+        e.target.parentNode.appendChild(addCard(name,phone)) : 
+        alert('please enter a valid number');
     }
     if(e.target.className == 'close'){
         e.target.parentNode.style.display = 'none';
