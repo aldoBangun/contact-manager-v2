@@ -8,9 +8,9 @@ const addCard = function(name,phone){
     const card = addDiv('card');
     const icon = name.split('');
     card.appendChild(addDiv('photo',icon[0]));
+    card.appendChild(addDiv('close','x'));
     card.appendChild(addDiv('name',name));
     card.appendChild(addDiv('phone',phone));
-    card.appendChild(addDiv('close','x'));
     return card;
 }
 const container = document.querySelector('.container');
@@ -25,7 +25,11 @@ container.addEventListener('click',function(e){
         alert('please enter a valid number');
     }
     if(e.target.className == 'close'){
-        e.target.parentNode.style.display = 'none';
+        const firstName = e.target.nextElementSibling.innerText.split(' ')[0];
+        const confirmation = confirm(`Delete ${firstName} from contacts?`);
+        if(confirmation === true){
+            e.target.parentNode.style.display = 'none';
+        }
     }
     e.preventDefault();
 });
